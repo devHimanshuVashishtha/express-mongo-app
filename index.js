@@ -12,6 +12,11 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.error("Mongo Error:", err));
 
+app.post('/users',async(req,res)=>{
+   const user = await User.create(req.body)
+   res.json(user)
+})
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
