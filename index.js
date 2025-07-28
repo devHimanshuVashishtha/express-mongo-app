@@ -26,10 +26,7 @@ app.get('/users/:id',async(req,res)=>{
     res.json(user)
 })
 
-app.put('/users/:id',async(req,res)=>{
-    const user = await User.findByIdAndUpdate(req.params.id,req.body);
-    res.json(user)
-})
+
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
