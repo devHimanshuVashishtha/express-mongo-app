@@ -31,6 +31,11 @@ app.put('/users/:id',async(req,res)=>{
     res.json(user)
 })
 
+app.delete('/users/:id',async(req,res)=>{
+    const user = await User.findByIdAndDelete(req.params.id);
+    res.json({message:'user deleted'})
+})
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
